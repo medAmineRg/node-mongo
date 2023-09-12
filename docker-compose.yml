@@ -1,0 +1,19 @@
+services:
+  web:
+    build: front/.
+    container_name: "first_front"
+    ports:
+      - "3000:3000"
+
+  backend:
+    build: Back/.
+    container_name: "first_backend"
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:latest
+    container_name: "mongo"
+    ports:
+      - "27017:27017"
