@@ -3,7 +3,7 @@ node {
             git credentialsId: 'git', url: 'https://github.com/medAmineRg/node-mongo'
         }
         stage('Build image') {
-                sh 'docker compose up -d --build .'
+                sh 'docker compose up -d --build'
         }
          // stage('Push image') {
          //    // withDockerRegistry(credentialsId: 'dockerhubjenkins', url: 'https://hub.docker.com/') {
